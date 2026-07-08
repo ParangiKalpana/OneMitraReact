@@ -23,7 +23,7 @@ function MobileMenu({ open, onClose }) {
         }`}
       >
         {/* gradient header, matches navbar accent */}
-        <div className="flex items-center justify-between bg-gradient-to-r from-brand-900 to-brand-700 px-6 py-5">
+        <div className="flex items-center justify-between bg-linear-to-r from-brand-900 to-brand-700 px-6 py-5">
           <span className="flex items-center gap-2 font-display text-lg font-bold text-white">
             OneMitra
           </span>

@@ -82,7 +82,7 @@ function Services() {
               style={{ animationDelay: `${index * 80}ms` }}
             >
               <div
-                className={`flex h-11 w-11 items-center justify-center rounded-md bg-gradient-to-br ${service.color}`}
+                className={`flex h-11 w-11 items-center justify-center rounded-md bg-linear-to-br ${service.color}`}
               >
                 <service.icon className="h-6 w-6 text-white" />
               </div>

@@ -60,7 +60,7 @@ function CaseStudies() {
   return (
     <>
       {/* Hero / intro */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 via-white to-white py-16 sm:py-20 lg:py-24">
+      <section className="relative overflow-hidden bg-linear-to-b from-blue-50 via-white to-white py-16 sm:py-20 lg:py-24">
         <div className="pointer-events-none absolute -top-20 -left-20 h-72 w-72 animate-pulse rounded-full bg-blue-200/40 blur-3xl" />
         <div
           className="pointer-events-none absolute top-10 -right-16 h-64 w-64 animate-pulse rounded-full bg-amber-200/30 blur-3xl"
@@ -76,7 +76,7 @@ function CaseStudies() {
             style={{ animationDelay: "80ms" }}
           >
             Engagements,{" "}
-            <span className="bg-gradient-to-r from-blue-700 via-amber-500 to-green-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-700 via-amber-500 to-green-600 bg-clip-text text-transparent">
               measured end to end
             </span>
           </h1>
@@ -138,7 +138,7 @@ function CaseStudies() {
       {/* CTA */}
       <section className="bg-white py-14 sm:py-20">
         <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
-          <div className="animate-fadeUp relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-900 to-blue-950 px-6 py-12 text-center sm:px-12 sm:py-20">
+          <div className="animate-fadeUp relative overflow-hidden rounded-2xl bg-linear-to-br from-blue-900 to-blue-950 px-6 py-12 text-center sm:px-12 sm:py-20">
             <div className="pointer-events-none absolute inset-0 [background:radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.30),transparent_55%)]" />
             <div className="relative mx-auto max-w-2xl">
               <h2 className="text-2xl font-bold text-white sm:text-4xl">
