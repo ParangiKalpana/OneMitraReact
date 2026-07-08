@@ -60,7 +60,7 @@ function About() {
                 run the operations they advise
               </span>
             </h1>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-gray-500 sm:text-lg">
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-gray-600 sm:text-lg">
               OneMitra was founded on a simple idea: strategy only matters if
               it survives contact with the day-to-day. We work alongside
               your team through planning and execution, so recommendations
@@ -82,7 +82,7 @@ function About() {
                     <dt className="font-mono text-2xl font-bold text-blue-700 sm:text-3xl">
                       {stat.value}
                     </dt>
-                    <dd className="mt-1 text-xs text-gray-500 sm:text-sm">
+                    <dd className="mt-1 text-xs text-gray-600 sm:text-sm">
                       {stat.label}
                     </dd>
                   </div>
@@ -116,7 +116,7 @@ function About() {
                 <h3 className="mt-6 text-lg font-semibold text-gray-900">
                   {value.title}
                 </h3>
-                <p className="mt-2 max-w-xs text-sm leading-relaxed text-gray-500">
+                <p className="mt-2 max-w-xs text-sm leading-relaxed text-gray-600">
                   {value.description}
                 </p>
               </div>
@@ -150,7 +150,7 @@ function About() {
                   href="https://wa.me/917383840814"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-green-500 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-green-600"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-[#0F7A40] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#0C6935]"
                 >
                   <ChatBubbleLeftRightIcon className="h-5 w-5" />
                   Chat on WhatsApp

@@ -27,7 +27,7 @@ function CTA() {
                 href="https://wa.me/917383840814"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-green-500 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-green-600"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-[#0F7A40] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#0C6935]"
               >
                 <ChatBubbleLeftRightIcon className="h-5 w-5" />
                 Chat on WhatsApp

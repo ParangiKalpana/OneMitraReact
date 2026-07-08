@@ -19,7 +19,7 @@ function Navbar() {
       <div className="w-full h-1 bg-linear-to-r from-blue-600 via-blue-500 to-green-500" />
 
       <div className="w-full max-w-[1280px] mx-auto flex items-center justify-between h-16 sm:h-20 px-4 sm:px-6 lg:px-10">
-        {/* Logo - always visible */}
+        
         <NavLink to="/" className="flex items-center gap-2 shrink-0">
           <span className="text-lg font-bold text-blue-900">OneMitra</span>
         </NavLink>
@@ -47,7 +47,7 @@ function Navbar() {
             href="https://wa.me/917383840814"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-md bg-green-500 px-4 py-2.5 text-sm font-semibold text-white hover:bg-green-600"
+            className="flex items-center gap-2 rounded-md bg-[#0F7A40] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#0C6935]"
           >
             <ChatBubbleLeftRightIcon className="h-4 w-4" />
             WhatsApp
@@ -65,7 +65,7 @@ function Navbar() {
           type="button"
           onClick={() => setMenuOpen(true)}
           aria-label="Open menu"
-          className="lg:hidden flex items-center justify-center h-10 w-10 rounded-md text-blue-900 hover:bg-blue-50"
+          className="lg:hidden flex items-center justify-center h-12 w-12 rounded-md text-blue-900 hover:bg-blue-50"
         >
           <Bars3Icon className="h-7 w-7" />
         </button>

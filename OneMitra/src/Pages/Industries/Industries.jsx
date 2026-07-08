@@ -77,7 +77,7 @@ function Industries() {
             </span>
           </h1>
           <p
-            className="animate-fadeUp mx-auto mt-4 max-w-xl text-base leading-relaxed text-gray-500 sm:text-lg"
+            className="animate-fadeUp mx-auto mt-4 max-w-xl text-base leading-relaxed text-gray-600 sm:text-lg"
             style={{ animationDelay: "160ms" }}
           >
             We build every recommendation around the operating constraints
@@ -104,7 +104,7 @@ function Industries() {
               <h2 className="mt-5 text-xl font-semibold text-gray-900">
                 {industry.title}
               </h2>
-              <p className="mt-2 text-sm leading-relaxed text-gray-500 sm:text-base">
+              <p className="mt-2 text-sm leading-relaxed text-gray-600 sm:text-base">
                 {industry.description}
               </p>
               <Link
@@ -144,7 +144,7 @@ function Industries() {
                   href="https://wa.me/917383840814"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-green-500 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-green-600"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-[#0F7A40] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#0C6935]"
                 >
                   <ChatBubbleLeftRightIcon className="h-5 w-5" />
                   Chat on WhatsApp

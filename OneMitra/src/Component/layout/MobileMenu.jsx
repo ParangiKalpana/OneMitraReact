@@ -6,7 +6,7 @@ function MobileMenu({ open, onClose }) {
   return (
     <div
       className={`fixed inset-0 z-50 lg:hidden ${open ? "pointer-events-auto" : "pointer-events-none"}`}
-      aria-hidden={!open}
+      inert={open ? undefined : true}
     >
       {/* Backdrop */}
       <div
@@ -23,14 +23,14 @@ function MobileMenu({ open, onClose }) {
         }`}
       >
         {/* gradient header, matches navbar accent */}
-        <div className="flex items-center justify-between bg-linear-to-r from-brand-900 to-brand-700 px-6 py-5">
+        <div className="flex items-center justify-between bg-gradient-to-r from-brand-900 to-brand-700 px-6 py-5">
           <span className="flex items-center gap-2 font-display text-lg font-bold text-white">
             OneMitra
           </span>
-          <button  
+          <button
             onClick={onClose}
             aria-label="Close menu"
-            className="rounded-md p-2 text-white/90 hover:bg-white/10"
+            className="flex h-12 w-12 items-center justify-center rounded-md text-white/90 hover:bg-white/10"
           >
             <XMarkIcon className="h-6 w-6" />
           </button>

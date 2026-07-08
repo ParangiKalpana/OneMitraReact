@@ -56,7 +56,7 @@ function Contact() {
               what you're trying to solve
             </span>
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-gray-500 sm:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-gray-600 sm:text-lg">
             Fill out the form, or reach us directly on WhatsApp — most
             conversations start there.
           </p>
@@ -66,7 +66,7 @@ function Contact() {
               href="https://wa.me/917383840814"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-full items-center justify-center gap-2 rounded-md bg-green-500 px-6 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-green-600 hover:shadow-lg sm:w-auto"
+              className="flex w-full items-center justify-center gap-2 rounded-md bg-[#0F7A40] px-6 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0C6935] hover:shadow-lg sm:w-auto"
             >
               <ChatBubbleLeftRightIcon className="h-5 w-5" />
               Chat on WhatsApp
@@ -193,6 +193,10 @@ function Contact() {
               >
                 Send message
               </button>
+
+              <p className="text-xs text-gray-600">
+                Protected by reCAPTCHA. By submitting, you agree to our Privacy Policy.
+              </p>
             </form>
           </div>
         </div>
