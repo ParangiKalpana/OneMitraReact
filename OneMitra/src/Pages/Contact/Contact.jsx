@@ -193,10 +193,6 @@ function Contact() {
               >
                 Send message
               </button>
-
-              <p className="text-xs text-gray-600">
-                Protected by reCAPTCHA. By submitting, you agree to our Privacy Policy.
-              </p>
             </form>
           </div>
         </div>
