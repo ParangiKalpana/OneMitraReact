@@ -187,17 +187,13 @@ function Contact() {
                 )}
               </div>
 
-              <button
+              <butto
                 type="submit"
                 className="flex w-full items-center justify-center gap-2 rounded-md bg-blue-900 px-6 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-lg sm:w-auto"
               >
                 Send message
-              </button>
-
-              <p className="text-xs text-gray-600">
-                Protected by reCAPTCHA. By submitting, you agree to our Privacy Policy.
-              </p>
-            </form>
+              </butto>
+           </form>
           </div>
         </div>
       </div>

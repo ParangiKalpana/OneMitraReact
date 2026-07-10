@@ -128,13 +128,6 @@ function KnowledgeCenter() {
                 frameworks worth acting on
               </span>
             </h1>
-            <p
-              className="animate-fadeUp mx-auto mt-4 max-w-xl text-base leading-relaxed text-gray-500 sm:text-lg"
-              style={{ animationDelay: "160ms" }}
-            >
-              Search or browse by category to find what's relevant to your
-              situation.
-            </p>
           </div>
 
           {/* Search */}
