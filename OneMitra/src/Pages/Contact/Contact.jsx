@@ -210,7 +210,7 @@ function Contact() {
                     name="phone"
                     type="tel"
                     inputMode="numeric"
-                    placeholder="98765 43210"
+                    pattern="[6-9][0-9]{9}"
                     value={form.phone}
                     onChange={handleChange}
                     aria-invalid={!!errors.phone}
