@@ -5,12 +5,18 @@ import {
   PhoneIcon,
   MapPinIcon,
   CheckCircleIcon,
+  ExclamationCircleIcon,
 } from "@heroicons/react/24/outline";
+
+// 🔑 Paste your Web3Forms Access Key here (from https://web3forms.com)
+const WEB3FORMS_ACCESS_KEY = "PASTE_YOUR_ACCESS_KEY_HERE";
 
 function Contact() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,21 +25,71 @@ function Contact() {
 
   const validate = () => {
     const next = {};
-    if (!form.name.trim()) next.name = "Name is required.";
-    if (!form.email.trim()) next.email = "Email is required.";
-    else if (!/^\S+@\S+\.\S+$/.test(form.email)) next.email = "Enter a valid email.";
-    if (!form.message.trim()) next.message = "Tell us a little about your goal.";
+
+    if (!form.name.trim()) {
+      next.name = "Name is required.";
+    } else if (form.name.trim().length < 2) {
+      next.name = "Name looks too short.";
+    }
+
+    if (!form.email.trim()) {
+      next.email = "Email is required.";
+    } else if (!/^\S+@\S+\.\S+$/.test(form.email)) {
+      next.email = "Enter a valid email.";
+    }
+
+    if (form.phone.trim()) {
+      const digitsOnly = form.phone.replace(/\D/g, "");
+      if (!/^[6-9]\d{9}$/.test(digitsOnly)) {
+        next.phone = "Enter a valid 10-digit phone number.";
+      }
+    }
+
+    if (!form.message.trim()) {
+      next.message = "Tell us a little about your goal.";
+    } else if (form.message.trim().length < 10) {
+      next.message = "Please add a few more details (min 10 characters).";
+    }
+
     return next;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
     setErrors(validationErrors);
-    if (Object.keys(validationErrors).length === 0) {
-      // TODO: wire to CMS / email endpoint + reCAPTCHA
-      setSubmitted(true);
-      setForm({ name: "", email: "", phone: "", message: "" });
+    setSendError("");
+
+    if (Object.keys(validationErrors).length > 0) return;
+
+    setSending(true);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name: form.name,
+          email: form.email,
+          phone: form.phone || "Not provided",
+          message: form.message,
+          subject: `New inquiry from ${form.name}`,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setSubmitted(true);
+        setForm({ name: "", email: "", phone: "", message: "" });
+      } else {
+        setSendError("Something went wrong sending your message. Please try WhatsApp instead.");
+      }
+    } catch (err) {
+      console.error("Web3Forms error:", err);
+      setSendError("Something went wrong sending your message. Please try WhatsApp instead.");
+    } finally {
+      setSending(false);
     }
   };
 
@@ -62,7 +118,7 @@ function Contact() {
           </p>
 
           <div className="mt-10 space-y-5">
-            <a
+            
               href="https://wa.me/917383840814"
               target="_blank"
               rel="noopener noreferrer"
@@ -107,6 +163,13 @@ function Contact() {
               </div>
             )}
 
+            {sendError && (
+              <div className="mb-6 flex items-start gap-3 rounded-md bg-red-50 p-4 text-sm text-red-800">
+                <ExclamationCircleIcon className="mt-0.5 h-5 w-5 shrink-0" />
+                <p>{sendError}</p>
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} noValidate className="space-y-5">
               <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                 <div>
@@ -138,10 +201,19 @@ function Contact() {
                     id="phone"
                     name="phone"
                     type="tel"
+                    inputMode="numeric"
+                    placeholder="98765 43210"
                     value={form.phone}
                     onChange={handleChange}
+                    aria-invalid={!!errors.phone}
+                    aria-describedby={errors.phone ? "phone-error" : undefined}
                     className="w-full rounded-md border border-gray-300 px-4 py-3 text-sm text-gray-900 transition-colors focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100"
                   />
+                  {errors.phone && (
+                    <p id="phone-error" className="mt-1.5 text-xs text-red-600">
+                      {errors.phone}
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -189,9 +261,10 @@ function Contact() {
 
               <button
                 type="submit"
-                className="flex w-full items-center justify-center gap-2 rounded-md bg-blue-900 px-6 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-lg sm:w-auto"
+                disabled={sending}
+                className="flex w-full items-center justify-center gap-2 rounded-md bg-blue-900 px-6 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
               >
-                Send message
+                {sending ? "Sending..." : "Send message"}
               </button>
             </form>
           </div>
