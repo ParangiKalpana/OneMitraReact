@@ -9,7 +9,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 // 🔑 Paste your Web3Forms Access Key here (from https://web3forms.com)
-const WEB3FORMS_ACCESS_KEY = "PASTE_YOUR_ACCESS_KEY_HERE";
+const WEB3FORMS_ACCESS_KEY = " 316c0e17-ffd0-41f8-bbcb-b1b6d6a85276";
 
 function Contact() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
@@ -62,6 +62,13 @@ function Contact() {
 
     if (Object.keys(validationErrors).length > 0) return;
 
+    if (WEB3FORMS_ACCESS_KEY === "PASTE_YOUR_ACCESS_KEY_HERE") {
+      setSendError(
+        "Email sending isn't set up yet — replace WEB3FORMS_ACCESS_KEY with your real key from web3forms.com."
+      );
+      return;
+    }
+
     setSending(true);
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -83,6 +90,7 @@ function Contact() {
         setSubmitted(true);
         setForm({ name: "", email: "", phone: "", message: "" });
       } else {
+        console.error("Web3Forms responded with failure:", data);
         setSendError("Something went wrong sending your message. Please try WhatsApp instead.");
       }
     } catch (err) {
@@ -118,7 +126,7 @@ function Contact() {
           </p>
 
           <div className="mt-10 space-y-5">
-            
+            <a
               href="https://wa.me/917383840814"
               target="_blank"
               rel="noopener noreferrer"
