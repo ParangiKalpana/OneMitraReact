@@ -9,7 +9,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 // 🔑 Paste your Web3Forms Access Key here (from https://web3forms.com)
-const WEB3FORMS_ACCESS_KEY = " 316c0e17-ffd0-41f8-bbcb-b1b6d6a85276";
+const WEB3FORMS_ACCESS_KEY = "316c0e17-ffd0-41f8-bbcb-b1b6d6a85276";
 
 function Contact() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
