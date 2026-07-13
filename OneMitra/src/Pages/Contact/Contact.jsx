@@ -24,7 +24,7 @@ const handleSubmit = async (e) => {
 
     const data = await response.json();
 
-    if (data.success) {
+    if (response.ok && data.success) {
       setSubmitted(true);
       setErrors({});
       setForm({
@@ -37,7 +37,7 @@ const handleSubmit = async (e) => {
       alert(data.message || "Failed to send email.");
     }
   } catch (error) {
-    console.error(error);
-    alert("Server error. Please try again later.");
+    console.error("Error:", error);
+    alert("Unable to connect to the server.");
   }
 };
