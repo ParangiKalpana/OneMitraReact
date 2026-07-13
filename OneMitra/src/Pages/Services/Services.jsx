@@ -59,19 +59,6 @@ const services = [
       "A structured diagnostic of your operating model, followed by a prioritized roadmap leadership can act on.",
     outcomes: ["Operating model assessment", "Prioritized 90-day roadmap", "Leadership alignment workshops"],
   },
-  {
-  icon: BriefcaseIcon,
-  title: "Business Consulting",
-  slug: "business-consulting",
-  color: "from-blue-700 to-blue-950",
-  description:
-    "A structured diagnostic of your operating model, followed by a prioritized roadmap leadership can act on.",
-  outcomes: [
-    "Operating model assessment",
-    "Prioritized 90-day roadmap",
-    "Leadership alignment workshops",
-  ],
-},
 {
   icon: CpuChipIcon,
   title: "AI Automation",
