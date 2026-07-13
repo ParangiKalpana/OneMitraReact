@@ -69,9 +69,8 @@ const services = [
   outcomes: [
     "AI Chatbot Development",
     "Business Workflow Automation",
-    "OpenAI & AI Integration",
-  ],
-},
+    "OpenAI & AI Integration",],
+  }
 ];
 
 const faqs = [
