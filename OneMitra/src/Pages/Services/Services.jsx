@@ -59,7 +59,7 @@ const services = [
       "A structured diagnostic of your operating model, followed by a prioritized roadmap leadership can act on.",
     outcomes: ["Operating model assessment", "Prioritized 90-day roadmap", "Leadership alignment workshops"],
   },
-{
+ {
   icon: CpuChipIcon,
   title: "AI Automation",
   slug: "ai-automation",

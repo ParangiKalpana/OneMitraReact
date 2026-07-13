@@ -22,12 +22,7 @@ const services = [
     description: "Campaigns across search, social, and paid channels built to generate qualified leads, not just impressions.",
     color: "from-orange-500 to-red-600",
   },
-  {
-    icon: DevicePhoneMobileIcon,
-    title: "Mobile Development",
-    description: "Native and cross-platform mobile apps designed for performance, retention, and a smooth user experience.",
-    color: "from-cyan-500 to-blue-700",
-  },
+ 
   {
     icon: PencilSquareIcon,
     title: "Content Marketing",
@@ -40,12 +35,7 @@ const services = [
     description: "Interfaces that look premium and convert — designed around your brand, not a generic template.",
     color: "from-purple-500 to-pink-600",
   },
-  {
-    icon: MagnifyingGlassIcon,
-    title: "SEO Services",
-    description: "Technical, on-page, and content SEO to get you found on Google and AI-powered search engines alike.",
-    color: "from-green-500 to-emerald-700",
-  },
+  
 ];
 
 function Services() {
