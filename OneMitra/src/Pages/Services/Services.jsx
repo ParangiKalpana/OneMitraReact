@@ -11,6 +11,7 @@ import {
   CheckCircleIcon,
   ChevronDownIcon,
   ChatBubbleLeftRightIcon,
+  CpuChipIcon,
 } from "@heroicons/react/24/outline";
 
 const services = [
