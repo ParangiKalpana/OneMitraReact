@@ -70,7 +70,7 @@ const services = [
     "AI Chatbot Development",
     "Business Workflow Automation",
     "OpenAI & AI Integration",],
-  },
+  }
 ];
 
 const faqs = [
