@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   CodeBracketIcon,
-  MegaphoneIcon,
-  DevicePhoneMobileIcon,
-  PencilSquareIcon,
   PaintBrushIcon,
+  MegaphoneIcon,
   MagnifyingGlassIcon,
+  BriefcaseIcon,
+  CpuChipIcon,
   ArrowRightIcon,
   CheckCircleIcon,
   ChevronDownIcon,
@@ -24,33 +24,6 @@ const services = [
     outcomes: ["Custom-built, responsive websites", "Clean, scalable codebase", "Fast load times & SEO-ready structure"],
   },
   {
-    icon: MegaphoneIcon,
-    title: "Digital Marketing",
-    slug: "digital-marketing",
-    color: "from-orange-500 to-red-600",
-    description:
-      "Campaigns across search, social, and paid channels built to generate qualified leads, not just impressions.",
-    outcomes: ["Multi-channel campaign strategy", "Paid ads management", "Performance tracking & reporting"],
-  },
-  {
-    icon: DevicePhoneMobileIcon,
-    title: "Mobile Development",
-    slug: "mobile-development",
-    color: "from-cyan-500 to-blue-700",
-    description:
-      "Native and cross-platform mobile apps designed for performance, retention, and a smooth user experience.",
-    outcomes: ["iOS & Android app development", "Cross-platform (React Native) builds", "App store launch support"],
-  },
-  {
-    icon: PencilSquareIcon,
-    title: "Content Marketing",
-    slug: "content-marketing",
-    color: "from-emerald-500 to-teal-700",
-    description:
-      "Strategic content — articles, guides, and campaigns — built to attract, engage, and convert your audience.",
-    outcomes: ["Content strategy & calendar", "SEO-optimized articles & guides", "Distribution across channels"],
-  },
-  {
     icon: PaintBrushIcon,
     title: "Web Design",
     slug: "web-design",
@@ -60,6 +33,15 @@ const services = [
     outcomes: ["Custom UI/UX design", "Mobile-first, responsive layouts", "Brand-consistent visual system"],
   },
   {
+    icon: MegaphoneIcon,
+    title: "Digital Marketing",
+    slug: "digital-marketing",
+    color: "from-orange-500 to-red-600",
+    description:
+      "Campaigns across search, social, and paid channels built to generate qualified leads, not just impressions.",
+    outcomes: ["Multi-channel campaign strategy", "Paid ads management", "Performance tracking & reporting"],
+  },
+  {
     icon: MagnifyingGlassIcon,
     title: "SEO Services",
     slug: "seo-services",
@@ -67,6 +49,27 @@ const services = [
     description:
       "Technical, on-page, and content SEO to get you found on Google and AI-powered search engines alike.",
     outcomes: ["Technical SEO audit & fixes", "Keyword & content strategy", "AI-search & schema optimization"],
+  },
+  {
+    icon: BriefcaseIcon,
+    title: "Business Consulting",
+    slug: "business-consulting",
+    color: "from-blue-700 to-blue-950",
+    description:
+      "A structured diagnostic of your operating model, followed by a prioritized roadmap leadership can act on.",
+    outcomes: ["Operating model assessment", "Prioritized 90-day roadmap", "Leadership alignment workshops"],
+  },
+ {
+  icon: CpuChipIcon,
+  title: "AI Automation",
+  slug: "ai-automation",
+  color: "from-cyan-500 to-blue-700",
+  description:
+    "Automate your business with AI-powered chatbots, workflow automation, and intelligent customer support solutions.",
+  outcomes: [
+    "AI Chatbot Development",
+    "Business Workflow Automation",
+    "OpenAI & AI Integration",],
   },
 ];
 
@@ -84,7 +87,7 @@ const faqs = [
   {
     question: "Can services be combined?",
     answer:
-      "Most engagements combine two or more services — for example, a new website alongside an SEO and digital marketing push, or a mobile app backed by a content strategy.",
+      "Most engagements combine two or more services — for example, a new website alongside an SEO and digital marketing push.",
   },
 ];
 
@@ -93,12 +96,10 @@ function Services() {
 
   return (
     <>
+      {/* Hero / intro */}
       <section className="relative overflow-hidden bg-linear-to-b from-blue-50 via-white to-white py-16 sm:py-20 lg:py-24">
         <div className="pointer-events-none absolute -top-20 -left-20 h-72 w-72 animate-pulse rounded-full bg-blue-200/40 blur-3xl" />
-        <div
-          className="pointer-events-none absolute top-10 -right-16 h-64 w-64 animate-pulse rounded-full bg-green-200/30 blur-3xl"
-          style={{ animationDelay: "1s" }}
-        />
+        <div className="pointer-events-none absolute top-10 -right-16 h-64 w-64 animate-pulse rounded-full bg-green-200/30 blur-3xl" style={{ animationDelay: "1s" }} />
 
         <div className="relative w-full max-w-[1280px] mx-auto px-4 text-center sm:px-6 lg:px-10">
           <p className="animate-fadeUp mb-3 inline-block rounded-full bg-blue-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-blue-700">
@@ -114,33 +115,33 @@ function Services() {
             </span>
           </h1>
           <p
-            className="animate-fadeUp mx-auto mt-4 max-w-xl text-base leading-relaxed text-gray-600 sm:text-lg"
+            className="animate-fadeUp mx-auto mt-4 max-w-xl text-base leading-relaxed text-gray-500 sm:text-lg"
             style={{ animationDelay: "160ms" }}
           >
-            From your website to your app to your search rankings — every
-            engagement is scoped against a metric you already track.
+            From your website to your search rankings to your operating
+            model — every engagement is scoped against a metric you already
+            track.
           </p>
         </div>
       </section>
 
+      {/* Service cards */}
       <section className="bg-white py-16 sm:py-20 lg:py-24">
         <div className="w-full max-w-[1280px] mx-auto grid grid-cols-1 gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:px-10">
           {services.map((service, index) => (
             <div
               key={service.slug}
               id={service.slug}
-              className="animate-fadeUp group flex flex-col rounded-xl border border-gray-200 bg-white p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-xl sm:p-8"
+              className="animate-fadeUp flex flex-col rounded-xl border border-gray-200 bg-white p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-xl sm:p-8"
               style={{ animationDelay: `${index * 90}ms` }}
             >
-              <div
-                className={`flex h-12 w-12 items-center justify-center rounded-md bg-linear-to-br ${service.color} shadow-sm transition-transform duration-200 group-hover:scale-105`}
-              >
+              <div className={`flex h-12 w-12 items-center justify-center rounded-md bg-linear-to-br ${service.color} shadow-sm`}>
                 <service.icon className="h-6 w-6 text-white" />
               </div>
               <h2 className="mt-5 text-xl font-semibold text-gray-900">
                 {service.title}
               </h2>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600 sm:text-base">
+              <p className="mt-2 text-sm leading-relaxed text-gray-500 sm:text-base">
                 {service.description}
               </p>
 
@@ -157,14 +158,15 @@ function Services() {
                 to="/contact"
                 className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-700 hover:text-blue-800"
               >
-                Discuss {service.title}
-                <ArrowRightIcon className="h-3.5 w-3.5 shrink-0 transition-transform duration-200 group-hover:translate-x-1" />
+                Discuss this service
+                <ArrowRightIcon className="h-3.5 w-3.5" />
               </Link>
             </div>
           ))}
         </div>
       </section>
 
+      {/* FAQ */}
       <section className="bg-gray-50 py-16 sm:py-20 lg:py-24">
         <div className="w-full max-w-[1280px] mx-auto grid grid-cols-1 gap-8 px-4 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-10">
           <div className="lg:col-span-4">
@@ -201,7 +203,7 @@ function Services() {
                         isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
                       }`}
                     >
-                      <div className="overflow-hidden px-5 pb-5 text-sm leading-relaxed text-gray-600 sm:px-6 sm:text-base">
+                      <div className="overflow-hidden px-5 pb-5 text-sm leading-relaxed text-gray-500 sm:px-6 sm:text-base">
                         {item.answer}
                       </div>
                     </div>
@@ -213,6 +215,7 @@ function Services() {
         </div>
       </section>
 
+      {/* CTA */}
       <section className="bg-white py-14 sm:py-20">
         <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
           <div className="animate-fadeUp relative overflow-hidden rounded-2xl bg-linear-to-br from-blue-900 to-blue-950 px-6 py-12 text-center sm:px-12 sm:py-20">
@@ -237,7 +240,7 @@ function Services() {
                   href="https://wa.me/917383840814"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-[#0F7A40] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#0C6935]"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-green-500 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-green-600"
                 >
                   <ChatBubbleLeftRightIcon className="h-5 w-5" />
                   Chat on WhatsApp
